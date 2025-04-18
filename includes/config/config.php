@@ -31,10 +31,10 @@ return [
     
     // Discord Rol Adları
     'discord_roles' => [
-        '1353795720716746884' => 'Fellas',
-        '1285694535766245408' => 'Community',
-        '1267751951307903017' => 'Developer',
-        '1267646750789861537' => 'Whitelist'
+        \Core\Config::get('discord.roles.fellas_id', 'ROLE_ID_1') => 'Fellas',
+        \Core\Config::get('discord.roles.community_id', 'ROLE_ID_2') => 'Community',
+        \Core\Config::get('discord.roles.developer_id', 'ROLE_ID_3') => 'Developer',
+        \Core\Config::get('discord.roles.whitelist_id', 'ROLE_ID_4') => 'Whitelist'
     ],
     
     // Sayfa Görünürlük Ayarları

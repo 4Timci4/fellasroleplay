@@ -63,9 +63,9 @@ function has_admin_access() {
     
     // Admin paneline erişim izni olan rol ID'leri
     $admin_role_ids = [
-        '1353795720716746884', // Fellas
-        '1285694535766245408', // Community
-        '1267751951307903017'  // Developer
+        \Core\Config::get('discord.roles.fellas_id', 'ROLE_ID_1'),    // Fellas
+        \Core\Config::get('discord.roles.community_id', 'ROLE_ID_2'), // Community
+        \Core\Config::get('discord.roles.developer_id', 'ROLE_ID_3')  // Developer
     ];
     
     // Kullanıcının rollerini kontrol et
@@ -93,8 +93,8 @@ function has_full_admin_access() {
     
     // Tam yetkili roller
     $admin_role_ids = [
-        '1353795720716746884', // Fellas
-        '1267751951307903017'  // Developer
+        \Core\Config::get('discord.roles.fellas_id', 'ROLE_ID_1'),    // Fellas
+        \Core\Config::get('discord.roles.developer_id', 'ROLE_ID_3')  // Developer
     ];
     
     // Kullanıcının rollerini kontrol et
@@ -178,7 +178,7 @@ function refresh_discord_roles() {
                 $_SESSION['discord_roles'] = $new_roles;
                 
                 // Whitelist rolünü kontrol et
-                $whitelist_role_id = \Core\Config::get('discord.whitelist_role_id', '1267646750789861537');
+                $whitelist_role_id = \Core\Config::get('discord.roles.whitelist_id', 'ROLE_ID_4');
                 $_SESSION['has_whitelist'] = in_array($whitelist_role_id, $_SESSION['discord_roles']);
                 
                 // Debug için rol değişimini kaydet
@@ -199,7 +199,7 @@ function refresh_discord_roles() {
         // Discord API bilgilerini al
         $discord_bot_token = \Core\Config::get('discord.bot_token', 'YOUR_DISCORD_BOT_TOKEN');
         $discord_guild_id = \Core\Config::get('discord.guild_id', '1267610711509438576');
-        $discord_whitelist_role_id = \Core\Config::get('discord.whitelist_role_id', '1267646750789861537');
+        $discord_whitelist_role_id = \Core\Config::get('discord.roles.whitelist_id', 'ROLE_ID_4');
         
         // Kullanıcının üye olduğu sunucunun detaylarını al
         $url = "https://discord.com/api/v10/guilds/{$discord_guild_id}/members/{$discord_user_id}";
