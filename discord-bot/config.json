@@ -1,0 +1,9 @@
+{
+    "_comment": "Fellas Roleplay Discord Bot Yapılandırma Dosyası (Sadeleştirilmiş)",
+    "token": "YOUR_DISCORD_BOT_TOKEN",
+    "clientId": "YOUR_DISCORD_CLIENT_ID",
+    "serverId": "YOUR_DISCORD_SERVER_ID",
+    "roleControl": "YOUR_DISCORD_ROLE_CONTROL_ID",
+    "whitelistRoleId": "YOUR_DISCORD_WHITELIST_ROLE_ID",
+    "httpPort": 3000
+}

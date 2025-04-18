@@ -1,0 +1,29 @@
+# URL Yeniden Yazma Kuralları
+<IfModule mod_rewrite.c>
+    # Rewrite motorunu etkinleştir
+    RewriteEngine On
+    
+    # Dizin kontrolü - eğer istenen şey bir dizin ise, yeniden yazma yapma
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Dosya kontrolü - eğer istenen şey bir dosya ise, yeniden yazma yapma
+    RewriteCond %{REQUEST_FILENAME} !-f
+    
+    # .php uzantısı olmadan gelen istekleri .php uzantılı dosyalara yönlendir
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+    
+    # Ana dizini anasayfa.php'ye yönlendir
+    RewriteRule ^$ anasayfa.php [L]
+    
+    # anasayfa URL'sini index.php'ye yönlendir
+    RewriteRule ^anasayfa$ index.php [L]
+    
+    # login URL'sini login.php'ye yönlendir
+    RewriteRule ^login$ login.php [L]
+    
+    # auth URL'sini auth.php'ye yönlendir
+    RewriteRule ^auth$ auth.php [L]
+    
+    # .php uzantılı URL'leri uzantısız versiyonlarına yönlendir
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+    RewriteRule ^ /%1 [R=301,NE,L]

@@ -1,0 +1,17 @@
+# URL Yeniden Yazma Kuralları
+<IfModule mod_rewrite.c>
+    # Rewrite motorunu etkinleştir
+    RewriteEngine On
+    
+    # Dizin kontrolü - eğer istenen şey bir dizin ise, yeniden yazma yapma
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Dosya kontrolü - eğer istenen şey bir dosya ise, yeniden yazma yapma
+    RewriteCond %{REQUEST_FILENAME} !-f
+    
+    # .php uzantısı olmadan gelen istekleri .php uzantılı dosyalara yönlendir
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+    
+    # index.php'yi ana dizine yönlendir
+    RewriteRule ^$ index.php [L]
+</IfModule>
