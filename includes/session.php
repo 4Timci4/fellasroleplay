@@ -197,7 +197,7 @@ function refresh_discord_roles() {
         require_once 'config.php';
         
         // Discord API bilgilerini al
-        $discord_bot_token = \Core\Config::get('discord.bot_token', 'MTM1MTU0NTUzNjU3Mzk5NzA4Nw.GMq93K.V25xA1ejWrRQggRapeLVZSpWGbftO5kMhFnUNo');
+        $discord_bot_token = \Core\Config::get('discord.bot_token', 'YOUR_DISCORD_BOT_TOKEN');
         $discord_guild_id = \Core\Config::get('discord.guild_id', '1267610711509438576');
         $discord_whitelist_role_id = \Core\Config::get('discord.whitelist_role_id', '1267646750789861537');
         

@@ -10,7 +10,7 @@
 require_once __DIR__ . '/bootstrap.php';
 
 // Eski stil global değişkenleri sağlayan kod, geriye uyumluluk için
-$discord_api_token = getenv('DISCORD_BOT_TOKEN') ?: 'MTM1MTU0NTUzNjU3Mzk5NzA4Nw.GMq93K.V25xA1ejWrRQggRapeLVZSpWGbftO5kMhFnUNo';
+$discord_api_token = getenv('DISCORD_BOT_TOKEN') ?: 'YOUR_DISCORD_BOT_TOKEN';
 $discord_guild_id = getenv('DISCORD_GUILD_ID') ?: '1267610711509438576';
 $discord_whitelist_role_id = getenv('DISCORD_WHITELIST_ROLE_ID') ?: '1267646750789861537';
 
